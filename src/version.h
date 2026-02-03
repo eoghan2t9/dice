@@ -3,7 +3,10 @@
  * readable text like log messages and SERVER_NAME is used in INFO fields and
  * similar. */
 #define SERVER_NAME "valkey"
-#define SERVER_TITLE "Valkey"
+#define SERVER_TITLE "DiceDB"
+#define DICEDB_VERSION "1.0.0"
+#define DICEDB_VERSION_NUM 0x00010000
+
 #define VALKEY_VERSION "8.0.6"
 #define VALKEY_VERSION_NUM 0x00080006
 

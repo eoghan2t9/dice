@@ -5448,6 +5448,7 @@ sds genValkeyInfoString(dict *section_dict, int all_sections, int everything) {
             "redis_version:%s\r\n", REDIS_VERSION,
             "server_name:%s\r\n", SERVER_NAME,
             "valkey_version:%s\r\n", VALKEY_VERSION,
+            "dicedb_version:%s\r\n", DICEDB_VERSION,
             "redis_git_sha1:%s\r\n", serverGitSHA1(),
             "redis_git_dirty:%i\r\n", strtol(serverGitDirty(),NULL,10) > 0,
             "redis_build_id:%s\r\n", serverBuildIdString(),
@@ -6178,8 +6179,8 @@ void serverAsciiArt(void) {
     if (!show_logo) {
         serverLog(LL_NOTICE, "Running mode=%s, port=%d.", mode, server.port ? server.port : server.tls_port);
     } else {
-        snprintf(buf, 1024 * 16, ascii_logo, VALKEY_VERSION, serverGitSHA1(), strtol(serverGitDirty(), NULL, 10) > 0,
-                 (sizeof(long) == 8) ? "64" : "32", mode, server.port ? server.port : server.tls_port, (long)getpid());
+        snprintf(buf, 1024 * 16, ascii_logo, DICEDB_VERSION, serverGitSHA1(), strtol(serverGitDirty(), NULL, 10) > 0,
+                 (sizeof(long) == 8) ? "64" : "32", VALKEY_VERSION, mode, server.port ? server.port : server.tls_port, (long)getpid());
         serverLogRaw(LL_NOTICE | LL_RAW, buf);
     }
     zfree(buf);
